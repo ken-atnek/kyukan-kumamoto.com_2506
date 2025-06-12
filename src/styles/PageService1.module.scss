@@ -11,6 +11,10 @@
     align-items: center;
     padding: 3em 2em 2em;
     gap: 8em 0;
+    @include sp {
+        padding: 6vw 4vw;
+        gap: 12vw 0;
+    }
     .headComment {
         text-align: center;
         font-size: FZ(16);
@@ -29,6 +33,9 @@
             letter-spacing: 0.08em;
             border-bottom: 2px solid #748184;
             padding-bottom: 0.2em;
+            @include sp {
+                font-size: FZ(24);
+            }
         }
         .sidebarH3 {
             width: 100%;
@@ -47,6 +54,10 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             margin-top: 5em;
+            @include sp {
+                gap: 0 2vw;
+                margin-top: 8vw;
+            }
             img {
                 aspect-ratio: 1.3325;
                 object-fit: cover;
@@ -60,8 +71,16 @@
             margin-top: 5em;
             display: flex;
             gap: 0 3em;
+            @include sp {
+                flex-direction: column;
+                gap: 4vw 0;
+                margin-top: 8vw;
+            }
             img {
                 width: 35%;
+                @include sp {
+                    width: 100%;
+                }
             }
             .wrapContents {
                 position: relative;
@@ -69,11 +88,17 @@
                 display: flex;
                 flex-direction: column;
                 gap: 1.4em 0;
+                @include sp {
+                    gap: 6vw 0;
+                }
                 h4 {
                     @include Serif;
                     font-size: FZ(30);
                     letter-spacing: 0.04em;
                     line-height: 1.6em;
+                    @include sp {
+                        font-size: FZ(24);
+                    }
                 }
                 h5 {
                     position: relative;
@@ -103,11 +128,15 @@
             }
         }
     }
+
     /* =================================
 ** 解体実績
 ------------------------------ */
     .blockWorks {
         margin-top: 5em;
+        @include sp {
+            margin-top: 6vw;
+        }
         .boxImage {
             position: relative;
             font-size: inherit;
@@ -115,6 +144,12 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             margin-top: 5em;
+            @include sp {
+                grid-template-columns: unset;
+                grid-auto-flow: row;
+                margin-top: 10vw;
+                gap: 4vw 0;
+            }
             img {
                 aspect-ratio: 1.3325;
                 object-fit: cover;

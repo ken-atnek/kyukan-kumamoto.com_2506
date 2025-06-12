@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/assets/images/logo.webp';
+import LogoMark from '@/assets/images/logo-mark.webp';
 import { usePathname } from 'next/navigation';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,7 +56,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.innerWidth > 768) {
-        setIsScrolled(window.scrollY > 150);
+        setIsScrolled(window.scrollY > 120);
       } else {
         setIsScrolled(false);
       }
@@ -80,7 +81,12 @@ const Header = () => {
       <article>
         <Link href="/" className={styles.linkH1}>
           <h1>
-            <Image src={Logo} alt="株式会社久環" />
+            <Image src={Logo} alt="株式会社久環" className={styles.logo} />
+            <Image
+              src={LogoMark}
+              alt="株式会社久環"
+              className={styles.logoMark}
+            />
           </h1>
         </Link>
         <nav

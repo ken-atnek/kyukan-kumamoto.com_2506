@@ -10,7 +10,6 @@
     align-items: center;
     padding-inline: 2em;
     background-color: rgb(11 97 71 / 5%);
-
     @include sp {
         padding-inline: 4vw;
     }
@@ -21,7 +20,6 @@
         flex-direction: column;
         align-items: center;
         color: $base-black;
-
         .H3Sidebar {
             font-size: FZ(16);
             margin-top: 1em;
@@ -37,6 +35,9 @@
             width: 100%;
             margin-top: 3em;
             gap: 1.6em 0;
+            @include sp {
+                margin-top: 4vw;
+            }
 
             // inputタグ初期化
             input {
@@ -136,7 +137,6 @@
                         font-size: inherit;
                         grid-template-columns: auto 1fr;
                         gap: 1em 0;
-
                         & > div {
                             grid-column: span 2;
                             font-size: inherit;
@@ -146,6 +146,9 @@
                             align-items: center;
                             @include sp {
                                 grid-column: span 2;
+                                input {
+                                    grid-column: span 2;
+                                }
                             }
                             h4 {
                                 font-size: FZ(12);

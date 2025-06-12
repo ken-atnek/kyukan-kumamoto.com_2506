@@ -20,7 +20,7 @@
         padding-block: 2rem;
         padding-inline: 2em;
         @include sp {
-            padding: 2vw 4vw;
+            padding: 3vw 4vw;
             max-width: unset;
         }
         .linkH1 {
@@ -29,6 +29,12 @@
             transition: 0.3s ease-out;
             h1 {
                 width: clamp(16rem, 18vw, 36rem);
+                @include sp {
+                    width: 45vw;
+                }
+                .logoMark {
+                    display: none;
+                }
             }
         }
         nav {
@@ -72,6 +78,7 @@
                 translate: 100vw;
                 transition: 0.3s ease-out;
                 opacity: 0;
+                gap: 6vw 0;
                 &.is-open {
                     translate: 0;
                     opacity: 1;
@@ -91,8 +98,32 @@
         opacity: 1;
         transform: translateY(0);
         pointer-events: auto;
-        .linkH1 {
-            color: $base-black;
+        .headComment {
+            display: flex;
+            color: $base-white;
+            background-color: #748184;
+            width: 100%;
+            justify-content: flex-end;
+            font-size: FZ(12);
+            padding: 0.8em 2em;
+            letter-spacing: 0.08em;
+        }
+        article {
+            padding-block: 1em;
+            justify-content: flex-start;
+            gap: 0 2em;
+            .linkH1 {
+                h1 {
+                    width: 5rem;
+                    .logo {
+                        display: none;
+                    }
+                    .logoMark {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }
@@ -102,14 +133,12 @@
     right: 4vw;
     width: 10vw;
     aspect-ratio: 1;
-
-    // border: solid 1px #000000;
+    border: solid 2px #fff;
     z-index: 100;
     display: none;
     @include sp {
         display: block;
-        background-color: #fff;
-        border: 1px solid $base-black;
+        background-color: $base-green;
     }
     span {
         position: absolute;
@@ -117,16 +146,16 @@
         left: 50%;
         width: 60%;
         height: 2px;
-        background-color: $base-black;
+        background-color: #fff;
         transition: 0.3s ease-out;
         &:nth-of-type(1) {
-            translate: -50% calc(-50% - 7px);
+            translate: -50% calc(-50% - 5px);
         }
         &:nth-of-type(2) {
             translate: -50% -50%;
         }
         &:nth-of-type(3) {
-            translate: -50% calc(-50% + 7px);
+            translate: -50% calc(-50% + 5px);
         }
     }
     &.is-open {

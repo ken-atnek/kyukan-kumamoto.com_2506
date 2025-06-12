@@ -1,12 +1,14 @@
 @use "variable" as *;
 @use "svg" as *;
-
 .container01,
 .container02 {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 6em 2em 2em;
+    @include sp {
+        padding: 6vw 4vw;
+    }
     article {
         display: flex;
         flex-direction: column;
@@ -19,21 +21,28 @@
             letter-spacing: 0.08em;
             border-bottom: 2px solid #748184;
             padding-bottom: 0.2em;
+            @include sp {
+                font-size: FZ(24);
+            }
         }
     }
 }
+
 /* =================================
 ** 保有施設
 ------------------------------ */
 .container01 {
     background-color: rgb(11 97 71 / 5%);
-
     .headTitle {
         font-size: FZ(28);
         @include Serif;
         letter-spacing: 0.04em;
         position: relative;
         margin-bottom: 2em;
+        @include sp {
+            font-size: FZ(22);
+            margin-bottom: 6vw;
+        }
         &::after {
             content: "";
             position: absolute;
@@ -43,6 +52,10 @@
             width: 3em;
             height: 3px;
             background-color: #04936a;
+            @include sp {
+                width: 40vw;
+                top: calc(100% + 0.5em);
+            }
         }
     }
     .headComment {
@@ -53,7 +66,9 @@
     }
     article {
         margin-top: 8em;
-
+        @include sp {
+            margin-top: 10vw;
+        }
         .listFacilities {
             position: relative;
             font-size: inherit;
@@ -61,18 +76,29 @@
             flex-direction: column;
             gap: 4em 0;
             margin-top: 3em;
-            li {
+            @include sp {
+                margin-top: 4vw;
+                gap: 8vw 0;
+            }
+            .itemFacilities {
                 position: relative;
                 display: flex;
                 font-size: inherit;
                 --block-gap: 1.2em;
                 margin-top: 2em;
+                @include sp {
+                    flex-direction: column;
+                    --block-gap: 0;
+                }
                 .itemImage {
                     font-size: inherit;
                     width: 50%;
                     padding-right: var(--block-gap);
                     aspect-ratio: 1.5;
                     object-fit: cover;
+                    @include sp {
+                        width: 100%;
+                    }
                 }
                 .wrapDetail {
                     font-size: inherit;
@@ -82,10 +108,16 @@
                     flex-direction: column;
                     gap: 2em 0;
                     padding-top: 0.5em;
+                    @include sp {
+                        gap: 4vw 0;
+                    }
                     h4 {
                         font-size: FZ(28);
                         @include Serif;
                         letter-spacing: 0.04em;
+                        @include sp {
+                            font-size: FZ(20);
+                        }
                     }
                     p {
                         font-size: FZ(16);
@@ -96,6 +128,9 @@
                 }
                 &:nth-of-type(2n) {
                     flex-direction: row-reverse;
+                    @include sp {
+                        flex-direction: column;
+                    }
                     .itemImage {
                         padding-right: unset;
                         padding-left: var(--block-gap);
@@ -109,12 +144,16 @@
         }
     }
 }
+
 /* =================================
 ** 処理可能品
 ------------------------------ */
 .container02 {
     gap: 8em 0;
     padding-bottom: 5em;
+    @include sp {
+        gap: 10vw 0;
+    }
     article {
         dl {
             position: relative;
@@ -124,6 +163,10 @@
             gap: 3em 0;
             width: 100%;
             margin-top: 2em;
+            @include sp {
+                gap: 8vw 0;
+                margin-top: 4vw;
+            }
             div {
                 position: relative;
                 font-size: inherit;
@@ -159,6 +202,9 @@
                         font-size: inherit;
                         gap: 0.8em 0;
                         padding-left: 1em;
+                        @include sp {
+                            padding-left: 2vw;
+                        }
                         li {
                             font-size: FZ(18);
                             letter-spacing: 0.08em;
@@ -166,6 +212,10 @@
                             display: flex;
                             flex-direction: column;
                             padding-left: 1em;
+                            @include sp {
+                                font-size: FZ(16);
+                                line-height: 1.6em;
+                            }
                             &::before {
                                 content: "";
                                 position: absolute;
@@ -176,8 +226,8 @@
                                 border-radius: 50%;
                                 background-color: $base-black;
                             }
-                            span {
-                                color: rgba(72, 145, 126, 0.7);
+                            .notice {
+                                color: rgb(72 145 126 / 70%);
                                 font-size: 0.9em;
                                 margin-top: 0.5em;
                                 letter-spacing: 0.08em;
@@ -189,7 +239,6 @@
         }
         nav {
             width: 100%;
-            display: flex;
             font-size: inherit;
             display: flex;
             flex-direction: column;

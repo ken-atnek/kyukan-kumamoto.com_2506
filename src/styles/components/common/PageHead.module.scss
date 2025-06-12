@@ -8,7 +8,7 @@
     display: grid;
     place-content: center;
     @include sp {
-        height: 30vh;
+        height: 30vw;
     }
     &::before {
         content: "";
@@ -28,6 +28,9 @@
             @include Serif;
             font-weight: 600;
             letter-spacing: 0.08em;
+            @include sp {
+                font-size: FZ(26);
+            }
         }
         .sidebarH2 {
             position: relative;

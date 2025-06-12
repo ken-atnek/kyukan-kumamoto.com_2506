@@ -5,6 +5,10 @@
     font-size: inherit;
     gap: 0 2em;
     align-items: flex-start;
+    @include sp {
+        flex-direction: column;
+        width: 100%;
+    }
     h3 {
         letter-spacing: 0.08em;
         color: #04936a;
@@ -13,6 +17,12 @@
         writing-mode: vertical-rl; // 縦書き
         text-orientation: upright; // 縦書き英数回転
         font-feature-settings: initial; // 左詰め解除
+        @include sp {
+            writing-mode: unset; // 縦書き
+            text-orientation: upright; // 縦書き英数回転
+            font-feature-settings: unset; // 左詰め解除
+            font-size: FZ(24);
+        }
     }
     .titleEn {
         flex: 1;
@@ -21,5 +31,10 @@
         text-transform: uppercase;
         border-bottom: solid 2px #748184;
         padding-bottom: 0.5em;
+        @include sp {
+            width: 100%;
+            font-size: FZ(16);
+            margin-top: 2vw;
+        }
     }
 }

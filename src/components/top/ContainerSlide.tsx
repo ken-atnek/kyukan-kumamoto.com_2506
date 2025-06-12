@@ -50,11 +50,10 @@ const ContainerSlide = () => {
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         speed={1000}
         breakpoints={{
-          768: { slidesPerView: 2.5 },
+          768: { slidesPerView: 1 },
           1024: { slidesPerView: 3 },
         }}
         spaceBetween={0}
-        slidesPerView={3}
         centeredSlides
         loop
       >

@@ -9,6 +9,9 @@
     display: flex;
     justify-content: center;
     padding: 14em 2em 16em;
+    @include sp {
+        padding: 44vw 4vw 4vw;
+    }
     &::after {
         content: "";
         position: absolute;
@@ -25,6 +28,9 @@
             letter-spacing: 0.08em;
             font-size: FZ(42);
             font-weight: 600;
+            @include sp {
+                font-size: FZ(26);
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -35,6 +41,9 @@
                 background: url("../assets/images/logo-mark.webp") no-repeat
                     center center/contain;
                 aspect-ratio: 318/359;
+                @include sp {
+                    width: 32vw;
+                }
             }
         }
         p {
@@ -77,8 +86,14 @@
     flex-direction: column;
     align-items: center;
     padding: 5em 2em;
+    @include sp {
+        padding: 8vw 4vw;
+    }
     article {
         max-width: 117rem;
+        @include sp {
+            max-width: unset;
+        }
         .listFeature {
             position: relative;
             font-size: inherit;
@@ -91,12 +106,20 @@
                 display: flex;
                 font-size: inherit;
                 --block-gap: 1.2em;
+                @include sp {
+                    --block-gap: 0;
+                    flex-direction: column;
+                    gap: 4vw 0;
+                }
                 .itemImage {
                     font-size: inherit;
                     width: 50%;
                     padding-right: var(--block-gap);
                     aspect-ratio: 1.5;
                     object-fit: cover;
+                    @include sp {
+                        width: 100%;
+                    }
                 }
                 .wrapDetail {
                     font-size: inherit;
@@ -106,10 +129,17 @@
                     flex-direction: column;
                     gap: 2em 0;
                     padding-top: 0.5em;
+                    @include sp {
+                        gap: 4vw 0;
+                        padding-top: unset;
+                    }
                     h4 {
                         font-size: FZ(28);
                         @include Serif;
                         letter-spacing: 0.04em;
+                        @include sp {
+                            font-size: FZ(22);
+                        }
                     }
                     p {
                         font-size: FZ(16);
@@ -120,6 +150,9 @@
                 }
                 &:nth-of-type(2n) {
                     flex-direction: row-reverse;
+                    @include sp {
+                        flex-direction: column;
+                    }
                     .itemImage {
                         padding-right: unset;
                         padding-left: var(--block-gap);

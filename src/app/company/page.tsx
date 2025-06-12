@@ -68,21 +68,21 @@ export default function CompanyPage() {
               <dt>所在地</dt>
               <dd className={styles.wrapAddress}>
                 <div>
-                  <p>本社</p>
+                  <p className={styles.place}>本社</p>
                   <address>
                     <span>〒867-0006</span>
                     熊本県水俣市白浜町9番28号
                   </address>
                 </div>
                 <div>
-                  <p>中間処理場</p>
+                  <p className={styles.place}>中間処理場</p>
                   <address>
                     <span>〒867-0034</span>
                     熊本県水俣市袋字山神迫1639番39
                   </address>
                 </div>
                 <div>
-                  <p>熊本営業所</p>
+                  <p className={styles.place}>熊本営業所</p>
                   <address>
                     <span>〒862-0910</span>
                     熊本市東区健軍本町51-15

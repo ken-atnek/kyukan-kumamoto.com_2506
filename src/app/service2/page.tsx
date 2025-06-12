@@ -62,7 +62,7 @@ export default function Service2Page() {
           <h3>保有施設</h3>
           <ul className={styles.listFacilities}>
             {facilitiesList.map((item, index) => (
-              <li key={index}>
+              <li key={index} className={styles.itemFacilities}>
                 <Image
                   src={item.image}
                   alt={item.title}
