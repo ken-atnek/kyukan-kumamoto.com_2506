@@ -19,7 +19,7 @@ const notoSans = Noto_Sans_JP({
 });
 const libreFranklin = Libre_Franklin({
   subsets: ['latin'],
-  weight: ['300', '400', '600', '700'], // 必要なウェイトだけでOK
+  weight: ['300', '400', '500', '600', '700'], // 必要なウェイトだけでOK
   display: 'swap',
 });
 // 実際の本番環境かどうかを判定

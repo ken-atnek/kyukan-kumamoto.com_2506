@@ -3,8 +3,8 @@
 * お問い合せフォーム
 * URL:public/backend/contact.php
 * Referenced in: /page.tsx,
-* Created: 2025-06-09
-* Last updated: 2025-06-09
+* Created: 2025-06-12
+* Last updated: 2025-06-12
 * ======================================= */
 
 
@@ -13,14 +13,11 @@ header("Content-Type: application/json");
 
 // フォームデータを受け取る
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	$inquiryType = isset($_POST["inquiryType"]) ? trim($_POST["inquiryType"]) : "";
 	$name = isset($_POST["name"]) ? trim($_POST["name"]) : "";
-	$kana = isset($_POST["kana"]) ? trim($_POST["kana"]) : "";
 	$email = isset($_POST["email"]) ? trim($_POST["email"]) : "";
-	$phone = isset($_POST["phone"]) ? trim($_POST["phone"]) : "";
 	$message = isset($_POST["message"]) ? trim($_POST["message"]) : "";
 
-	if (empty($name) || empty($email) || empty($phone) || empty($message)) {
+	if (empty($name) || empty($email) || empty($message)) {
 		echo json_encode(["success" => false, "error" => "必須項目を入力してください"]);
 		exit;
 	}
@@ -28,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	// 📩 **メールの設定**
 	$to = "ken.atnek@gmail.com";
 	// $to = "qun@kind.ocn.ne.jp";
-	$to_name = "佐藤建装";
+	$to_name = "株式会社久環";
 	$send_date = date("Y/n/j-H:i", time());
 
 	// **エンコーディング設定**
@@ -45,16 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	$mail_body  = "お問い合わせフォームより\n";
 	$mail_body .= "--------------------\n";
 	$mail_body .= "■お名前\n{$name} 様\n";
-	if ($kana != "") {
-		$mail_body .= "■ふりがな\n{$kana} \n\n";
-	}
-	$mail_body .= "◎お電話番号\n{$phone}\n";
+
 	$mail_body .= "--------------------\n";
 	$mail_body .= "◎メールアドレス\n{$email}\n";
 	$mail_body .= "--------------------\n";
-	if ($inquiryType != "") {
-		$mail_body .= "■項目\n{$inquiryType} \n\n";
-	}
+
 	$mail_body .= "【お問い合わせ内容】\n{$message}\n\n";
 	$mail_body .= "--------------------\n";
 	$mail_body .= $send_date . "\n";

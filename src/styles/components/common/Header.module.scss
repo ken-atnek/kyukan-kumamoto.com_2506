@@ -43,6 +43,15 @@
                 font-size: FZ(17);
                 text-transform: uppercase;
                 letter-spacing: 0.07em;
+                transition: 0.2s ease-out;
+                &.isActive {
+                    color: #04934a;
+                }
+                &:not(.isActive) {
+                    &:hover {
+                        color: #04934a;
+                    }
+                }
                 &.isMobile {
                     display: none;
                     @include sp {

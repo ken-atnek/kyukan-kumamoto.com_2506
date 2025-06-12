@@ -10,9 +10,11 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/assets/images/logo.webp';
+import { usePathname } from 'next/navigation';
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -87,32 +89,44 @@ const Header = () => {
             !isOpen ? styles.closing : ''
           }`}
         >
-          <Link href="/" className={styles.itemLink} onClick={closeMenu}>
+          <Link
+            href="/"
+            className={`${styles.itemLink} ${pathname === '/' ? styles.isActive : ''}`}
+            onClick={closeMenu}
+          >
             TOP
           </Link>
           <Link
             href="/service1/"
-            className={styles.itemLink}
+            className={`${styles.itemLink} ${pathname === '/service1/' ? styles.isActive : ''}`}
             onClick={closeMenu}
           >
             解体業
           </Link>
-          <Link href="/works/" className={styles.itemLink} onClick={closeMenu}>
+          <Link
+            href="/works/"
+            className={`${styles.itemLink} ${pathname === '/works/' ? styles.isActive : ''}`}
+            onClick={closeMenu}
+          >
             解体実績
           </Link>
           <Link
             href="/service2/"
-            className={styles.itemLink}
+            className={`${styles.itemLink} ${pathname === '/service2/' ? styles.isActive : ''}`}
             onClick={closeMenu}
           >
             産業廃棄物
           </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
+          <Link
+            href="/company/"
+            className={`${styles.itemLink} ${pathname === '/company/' ? styles.isActive : ''}`}
+            onClick={closeMenu}
+          >
             会社情報／保有機材
           </Link>
           <Link
             href="/contact/"
-            className={styles.itemLink}
+            className={`${styles.itemLink} ${pathname === '/contact/' ? styles.isActive : ''}`}
             onClick={closeMenu}
           >
             お問い合わせ

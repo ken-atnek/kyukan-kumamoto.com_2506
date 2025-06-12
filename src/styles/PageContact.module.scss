@@ -1,0 +1,196 @@
+@use "variable" as *;
+@use "svg" as *;
+
+/* =================================
+** お問い合わせ
+------------------------------ */
+.containerContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2em;
+    background-color: rgb(11 97 71 / 5%);
+
+    @include sp {
+        padding-inline: 4vw;
+    }
+    article {
+        max-width: 87rem;
+        padding: 2em 0 5em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $base-black;
+
+        .H3Sidebar {
+            font-size: FZ(16);
+            margin-top: 1em;
+            letter-spacing: 0.08em;
+            text-align: center;
+            line-height: 1.8em;
+        }
+        .blockForm {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            width: 100%;
+            margin-top: 3em;
+            gap: 1.6em 0;
+
+            // inputタグ初期化
+            input {
+                margin: 0;
+                padding: 0;
+                background: none;
+                border: none;
+                border-radius: 0;
+                outline: none;
+                appearance: none;
+            }
+
+            // textareaタグ初期化
+            textarea {
+                outline: none;
+                min-height: 6lh;
+                field-sizing: content;
+                @include sp {
+                    min-height: 10lh;
+                }
+            }
+            select,
+            textarea,
+            input[type="text"],
+            input[type="email"] {
+                width: 100%;
+                color: #555;
+                padding: 0.8em;
+                border-radius: 0.3rem;
+                letter-spacing: 0.04em;
+                border: solid 1px #ccc;
+                font-size: 1.4rem;
+                background-color: #fff;
+                @include sp {
+                    padding: 1em;
+                    width: 100%;
+                    font-size: 1.6rem;
+                }
+                &::placeholder {
+                    color: #8f8f8f;
+                }
+            }
+            select {
+                outline: none;
+                appearance: none;
+                cursor: pointer;
+                @include sp {
+                    white-space: nowrap;
+                    min-width: 16em;
+                }
+            }
+            .box_btn {
+                color: $base-white;
+                font-size: inherit;
+                button {
+                    font-size: FZ(14);
+                    background-color: #777;
+                    padding-block: 0.8em;
+                    border-radius: 0.3rem;
+                    transition: 0.3s ease-out;
+                    @include sp {
+                        padding-block: 4vw;
+                        font-size: FZ(16);
+                    }
+                    &:hover {
+                        background-color: #929292;
+                    }
+                }
+            }
+            & > div {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 0.3em 0;
+                dt {
+                    font-size: FZ(12);
+                    color: #555;
+                    display: flex;
+                    align-items: center;
+                    &.formRequired {
+                        &::after {
+                            content: "*";
+                            color: rgb(204 0 0);
+                            font-size: 1.4em;
+                            margin-left: 0.2em;
+                        }
+                    }
+                }
+                dd {
+                    font-size: inherit;
+                    position: relative;
+                }
+                &.formName {
+                    dd {
+                        display: grid;
+                        font-size: inherit;
+                        grid-template-columns: auto 1fr;
+                        gap: 1em 0;
+
+                        & > div {
+                            grid-column: span 2;
+                            font-size: inherit;
+                            display: grid;
+                            grid-template-columns: subgrid;
+                            gap: 0 1em;
+                            align-items: center;
+                            @include sp {
+                                grid-column: span 2;
+                            }
+                            h4 {
+                                font-size: FZ(12);
+                                margin-right: 5em;
+                                @include sp {
+                                    grid-column: span 2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 確認画面
+        .statusConfirm {
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 1em 0;
+            @include sp {
+                gap: 6vw 0;
+                padding-top: 4vw;
+            }
+            p {
+                align-self: center;
+                font-size: FZ(16);
+            }
+            /* stylelint-disable-next-line no-descending-specificity */
+            & > div {
+                font-size: FZ(14);
+                @include sp {
+                    font-size: FZ(16);
+                }
+            }
+            .box_btn {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                font-size: inherit;
+                gap: 0 2em;
+                @include sp {
+                    margin-top: 10vw;
+                }
+            }
+        }
+    }
+}

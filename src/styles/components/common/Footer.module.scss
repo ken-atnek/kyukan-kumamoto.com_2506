@@ -55,6 +55,15 @@
                 position: relative;
                 padding-inline: 0.8em;
                 border-right: 1px solid;
+                transition: 0.2s ease-out;
+                &.isActive {
+                    color: #04934a;
+                }
+                &:not(.isActive) {
+                    &:hover {
+                        color: #04934a;
+                    }
+                }
                 &:first-of-type {
                     border-left: 1px solid;
                 }

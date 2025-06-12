@@ -46,7 +46,7 @@ const featureList = [
     description:
       'ご依頼に迅速にお応えするために、木造家屋から高層ビル、大型プラント等の解体に特化した機材や土地造成、廃棄物処理場といった豊富な機材・施設保有しております。',
     linkTitle: '保有機材について',
-    linkUrl: '#',
+    linkUrl: '/company/#containerEquipment',
   },
 ];
 export default function Home() {

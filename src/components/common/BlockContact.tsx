@@ -2,7 +2,7 @@
  * お問い合わせブロック
  * URL: src/components/common/BlockContact.tsx
  * Created: 2025-06-11
- * Last updated: 2025-06-11
+ * Last updated: 2025-06-12
  * ======================================= */
 
 import styles from '@/styles/components/common/BlockContact.module.scss';
@@ -25,7 +25,7 @@ const BlockContact = () => {
           <a href="tel:0966621484" className={styles.linkTel}>
             0966-62-1484
           </a>
-          <Link href="#" className="item-link">
+          <Link href="/contact/" className="item-link">
             <span>お問い合わせ</span>
           </Link>
         </div>

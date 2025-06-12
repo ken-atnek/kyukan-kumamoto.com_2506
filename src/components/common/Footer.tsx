@@ -2,14 +2,18 @@
  * FOOTER
  * URL: src/components/common/Footer.tsx
  * Created: 2025-06-10
- * Last updated: 2025-06-10
+ * Last updated: 2025-06-12
  * ======================================= */
+'use client';
 import styles from '@/styles/components/common/Footer.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/assets/images/logo.webp';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname();
+
   return (
     <footer className={styles.containerFooter}>
       <div className={styles.MovePageTop}>
@@ -20,22 +24,40 @@ const Footer = () => {
           <Image src={Logo} alt="株式会社久環" />
         </div>
         <nav>
-          <Link href="/" className={styles.itemLink}>
+          <Link
+            href="/"
+            className={`${styles.itemLink} ${pathname === '/' ? styles.isActive : ''}`}
+          >
             TOP
           </Link>
-          <Link href="#" className={styles.itemLink}>
+          <Link
+            href="/service1/"
+            className={`${styles.itemLink} ${pathname === '/service1/' ? styles.isActive : ''}`}
+          >
             解体業
           </Link>
-          <Link href="#" className={styles.itemLink}>
+          <Link
+            href="/works/"
+            className={`${styles.itemLink} ${pathname === '/works/' ? styles.isActive : ''}`}
+          >
             解体実績
           </Link>
-          <Link href="#" className={styles.itemLink}>
+          <Link
+            href="/service2/"
+            className={`${styles.itemLink} ${pathname === '/service2/' ? styles.isActive : ''}`}
+          >
             産業廃棄物
           </Link>
-          <Link href="#" className={styles.itemLink}>
+          <Link
+            href="/company/"
+            className={`${styles.itemLink} ${pathname === '/company/' ? styles.isActive : ''}`}
+          >
             会社情報／保有機材
           </Link>
-          <Link href="/contact/" className={styles.itemLink}>
+          <Link
+            href="/contact/"
+            className={`${styles.itemLink} ${pathname === '/contact/' ? styles.isActive : ''}`}
+          >
             お問い合わせ
           </Link>
         </nav>

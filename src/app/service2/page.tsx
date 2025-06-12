@@ -6,7 +6,7 @@
  * ======================================= */
 import styles from '@/styles/PageService2.module.scss';
 import PageHead from '@/components/common/PageHead';
-import bgImage from '@/assets/images/title-works-bg.webp';
+import bgImage from '@/assets/images/title-service2-bg.webp';
 import BlockContact from '@/components/common/BlockContact';
 import Facilities01 from '@/assets/images/service2/facilities01.webp';
 import Facilities02 from '@/assets/images/service2/facilities02.webp';
@@ -47,7 +47,7 @@ const facilitiesList: Facility[] = [
       '処理を行ったものは資源循環のため、再生品や各種原料として製造・販売を行っています。\n・木くず（燃料チップ等）\n・コンクリート・アスファルト（再生クラッシャラン）',
   },
 ];
-export default function WorksPage() {
+export default function Service2Page() {
   return (
     <>
       <PageHead title="産業廃棄物業" backgroundImage={bgImage} />
