@@ -1,0 +1,68 @@
+@use "variable" as *;
+@use "svg" as *;
+.blockContact {
+    background-color: #eceaea;
+    padding: 3em 2em;
+    display: flex;
+    justify-content: center;
+
+    article {
+        max-width: 117rem;
+        display: flex;
+        gap: 0 2px;
+        .boxTitle {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            padding: 3em 8em 3em 3em;
+            background-color: #fff;
+            h3 {
+                font-size: FZ(28);
+                @include Serif;
+            }
+            .sidebarH3 {
+                color: #e28157;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: FZ(16);
+                letter-spacing: 0.08em;
+                margin-top: 0.8em;
+            }
+            p {
+                font-size: FZ(16);
+                margin-top: 2em;
+                letter-spacing: 0.08em;
+                line-height: 1.8em;
+            }
+        }
+        .boxContact {
+            background-color: #fff;
+            flex: 1;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3em;
+            gap: 2em 0;
+            .linkTel {
+                position: relative;
+                color: #0b6147;
+                @include Serif;
+                font-size: FZ(28);
+                font-weight: 600;
+                letter-spacing: 0.08em;
+                padding-left: 1.1em;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    translate: 0 -50%;
+                    width: 0.9em;
+                    @include svg-icon-phone("0b6147");
+                }
+            }
+        }
+    }
+}

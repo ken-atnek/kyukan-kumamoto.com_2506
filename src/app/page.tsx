@@ -1,95 +1,101 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+/* =======================================
+ * TOPページ
+ * URL: /app/page.tsx
+ * Created: 2025-06-10
+ * Last updated: 2025-06-12
+ * ======================================= */
+import styles from '@/styles/PageTop.module.scss';
+import BlockContact from '@/components/common/BlockContact';
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import React from 'react';
+import featureImage01 from '@/assets/images/top/feature/feature01.webp';
+import featureImage02 from '@/assets/images/top/feature/feature02.webp';
+import featureImage03 from '@/assets/images/top/feature/feature03.webp';
+import ContainerSlide from '@/components/top/ContainerSlide';
+import PageTitle from '@/components/common/PageTitle';
+import Link from 'next/link';
+export const generateMetadata = (): Metadata => {
+  return {
+    title: '久環',
+    description:
+      '株式会社久環は一般建造物の解体だけにとどまらず、プラントや発電所などの特殊設備・建造物の解体に長けております。”次に繋げる解体”を意識し、解体だけでなくその後の土地造成等の施工体制も保持。どんな建造物もお客様のニーズに即した形で安全に対応いたします。また、産業廃棄物中間処理場を保有しており、産業処理まで一貫して対応いたします。',
+  };
+};
 
+const featureList = [
+  {
+    image: featureImage01,
+    title: '一般解体から特殊解体まで',
+    description:
+      '一般建造物の解体だけにとどまらず、プラントや発電所などの特殊設備・建造物の解体に長けております。\n”次に繋げる解体”を意識し、解体だけでなくその後の土地造成等の施工体制も保持。どんな建造物もお客様のニーズに即した形で安全に対応いたします。',
+    linkTItle: '解体業について',
+    linkUrl: '#',
+  },
+  {
+    image: featureImage02,
+    title: '産業処理まで一貫して対応',
+    description:
+      '弊社は産業廃棄物中間処理場を保有。\nさまざまな品目の処理を行う設備が整えております。',
+    linkTItle: '産業廃棄物について',
+    linkUrl: '#',
+  },
+  {
+    image: featureImage03,
+    title: '保有重機と施設',
+    description:
+      'ご依頼に迅速にお応えするために、木造家屋から高層ビル、大型プラント等の解体に特化した機材や土地造成、廃棄物処理場といった豊富な機材・施設保有しております。',
+    linkTItle: '保有機材について',
+    linkUrl: '#',
+  },
+];
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    <>
+      <section className={styles.containerHead}>
+        <article>
+          <h2>次世代へ繋ぐ、解体工事</h2>
+          <p>
+            熊本・水俣で解体業を営んでいる私たちにとって、安全に解体することはもちろん環境に配慮した形で処理をすることまでこそが責任だと考えています。
+            <br />
+            特別な解体に関しても長年の経験を基に安全に対応いたします。
+          </p>
+        </article>
+      </section>
+      <ContainerSlide />
+      <section className={styles.containerFeature}>
+        <article>
+          <article>
+            <PageTitle title="久環の特徴" titleEn="feature" />
+            <ul className={styles.listFeature}>
+              {featureList.map((item, index) => (
+                <li key={index}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    className={styles.itemImage}
+                  />
+                  <div className={styles.wrapDetail}>
+                    <h4>{item.title}</h4>
+                    <p>
+                      {item.description.split('\n').map((line, idx) => (
+                        <React.Fragment key={idx}>
+                          {line}
+                          <br />
+                        </React.Fragment>
+                      ))}
+                    </p>
+                    <Link href={item.linkUrl} className="item-link">
+                      <span>{item.linkTItle}</span>
+                    </Link>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </article>
+      </section>
+      <BlockContact />
+    </>
   );
 }

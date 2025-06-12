@@ -1,0 +1,130 @@
+@use "variable" as *;
+@use "svg" as *;
+/* =================================
+** 最上部
+------------------------------ */
+.containerHead {
+    background: url(/images/top-head.webp) no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    padding: 14em 2em 16em;
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(#fff, 0.6);
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            position: relative;
+            @include Serif;
+            letter-spacing: 0.08em;
+            font-size: FZ(42);
+            font-weight: 600;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                translate: -50%;
+                bottom: calc(100% + 0.5em);
+                width: 3.6em;
+                background: url(../assets/images/logo-mark.webp) no-repeat
+                    center center/contain;
+                aspect-ratio: 318/359;
+            }
+        }
+        p {
+            font-size: FZ(17);
+            text-align: center;
+            line-height: 2em;
+            letter-spacing: 0.08em;
+            max-width: 35em;
+            margin-top: 2em;
+        }
+    }
+}
+/* =================================
+** スライド画像
+------------------------------ */
+.containerSlide {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .blockSlide {
+        .slideItem {
+            position: relative;
+            aspect-ratio: 1.956;
+            img {
+                object-fit: cover;
+            }
+        }
+        .swiper-wrapper {
+            transition-timing-function: ease-in-out;
+        }
+    }
+}
+/* =================================
+** 久環の特徴
+------------------------------ */
+.containerFeature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5em 2em 5em;
+    article {
+        max-width: 117rem;
+        .listFeature {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 4em 0;
+            margin-top: 3em;
+            li {
+                position: relative;
+                display: flex;
+                font-size: inherit;
+                --block-gap: 1.2em;
+                .itemImage {
+                    font-size: inherit;
+                    width: 50%;
+                    padding-right: var(--block-gap);
+                }
+                .wrapDetail {
+                    font-size: inherit;
+                    padding-left: var(--block-gap);
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                    gap: 2em 0;
+                    padding-top: 0.5em;
+                    h4 {
+                        font-size: FZ(28);
+                        @include Serif;
+                        letter-spacing: 0.04em;
+                    }
+                    p {
+                        font-size: FZ(16);
+                        line-height: 1.8em;
+                        letter-spacing: 0.08em;
+                        text-align: justify;
+                    }
+                }
+                &:nth-of-type(2n) {
+                    flex-direction: row-reverse;
+                    .itemImage {
+                        padding-right: unset;
+                        padding-left: var(--block-gap);
+                    }
+                    .wrapDetail {
+                        padding-left: unset;
+                        padding-right: var(--block-gap);
+                    }
+                }
+            }
+        }
+    }
+}

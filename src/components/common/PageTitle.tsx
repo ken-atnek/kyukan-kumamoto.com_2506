@@ -1,32 +1,23 @@
 /* =======================================
  * ページタイトル
  * URL: src/components/common/PageTitle.tsx
- * Created: 2025-06-03
- * Last updated: 2025-06-03
+ * Created: 2025-06-12
+ * Last updated: 2025-06-12
  * ======================================= */
 
 import styles from '@/styles/components/common/PageTitle.module.scss';
-import { StaticImageData } from 'next/image';
 type PageHeadProps = {
   titleEn: string;
   title: string;
-  backgroundImage?: StaticImageData;
 };
 
-const PageTitle = ({ title, titleEn, backgroundImage }: PageHeadProps) => {
+const PageTitle = ({ title, titleEn }: PageHeadProps) => {
   return (
     <>
-      <section
-        className={styles.containerPageHead}
-        style={{
-          backgroundImage: backgroundImage
-            ? `url(${backgroundImage.src})`
-            : undefined,
-        }}
-      >
-        <span className={styles.h2Sidebar}>{titleEn}</span>
-        <h2>{title}</h2>
-      </section>
+      <div className={styles.blockTitle}>
+        <h3>{title}</h3>
+        <div className={styles.titleEn}>{titleEn}</div>
+      </div>
     </>
   );
 };

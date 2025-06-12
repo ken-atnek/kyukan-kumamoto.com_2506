@@ -1,0 +1,115 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include SunSerif;
+    padding: 2em 2em 1em;
+    .MovePageTop {
+        position: fixed;
+        bottom: 5em;
+        right: 2em;
+        font-size: inherit;
+        width: 4.2rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 1px solid $base-green;
+        transition: 0.3s ease-out;
+        .pageTop {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            @include svg-arrow-top("48917E");
+            background-size: 40%;
+            transition: 0.3s ease-out;
+        }
+        &:hover {
+            border-color: $base-black;
+            .pageTop {
+                @include svg-arrow-top("313131");
+                background-size: 40%;
+            }
+        }
+    }
+    article {
+        display: flex;
+        justify-content: space-between;
+        max-width: 117rem;
+        gap: 0 1em;
+        .boxLogo {
+            width: 100%;
+            max-width: 27rem;
+            flex: 1;
+            img {
+                width: 100%;
+            }
+        }
+        nav {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            align-items: center;
+            .itemLink {
+                font-size: FZ(12);
+                position: relative;
+                padding-inline: 0.8em;
+                border-right: 1px solid;
+                &:first-of-type {
+                    border-left: 1px solid;
+                }
+            }
+        }
+    }
+    dl {
+        position: relative;
+        width: 100%;
+        max-width: 117rem;
+        font-size: inherit;
+        margin-top: 3em;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1em 0;
+        margin-bottom: 3em;
+        div {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: subgrid;
+            gap: 0 2em;
+            font-size: inherit;
+            dt {
+                font-size: FZ(16);
+                text-align: right;
+                &::before {
+                    content: "（";
+                    margin-right: 0.1em;
+                }
+                &::after {
+                    content: "）";
+                    margin-left: 0.1em;
+                }
+            }
+            dd {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                address {
+                    font-size: FZ(16);
+                    display: flex;
+                    gap: 0 1em;
+                }
+                a {
+                    font-size: FZ(16);
+                    &::before {
+                        content: "TEL";
+                        margin-right: 0.2em;
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        font-size: FZ(12);
+        color: rgba($base-green, 0.7);
+    }
+}

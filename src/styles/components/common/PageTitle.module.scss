@@ -1,33 +1,25 @@
 @use "variable" as *;
 @use "svg" as *;
-.containerPageHead {
-    height: 32rem;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    display: grid;
-    place-content: center;
-    color: #fff;
-    @include sp {
-        height: 30vh;
+.blockTitle {
+    display: flex;
+    font-size: inherit;
+    gap: 0 2em;
+    align-items: flex-start;
+    h3 {
+        letter-spacing: 0.08em;
+        color: #04936a;
+        font-size: FZ(47);
+        font-weight: 600;
+        writing-mode: vertical-rl; //縦書き
+        text-orientation: upright; //縦書き英数回転
+        font-feature-settings: initial; //左詰め解除
     }
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-color: rgba(#000, 0.25);
-    }
-    .h2Sidebar {
-        font-size: FZ(32);
+    .titleEn {
+        flex: 1;
+        color: rgba(116, 129, 132, 0.75);
+        font-size: FZ(24);
         text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        z-index: 1;
-    }
-    h2 {
-        font-size: FZ(12);
-        text-align: center;
-        letter-spacing: 0.2em;
-        z-index: 1;
+        border-bottom: solid 2px #748184;
+        padding-bottom: 0.5em;
     }
 }
