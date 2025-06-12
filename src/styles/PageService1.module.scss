@@ -1,0 +1,106 @@
+@use "variable" as *;
+@use "svg" as *;
+
+/* =================================
+** 解体業
+------------------------------ */
+.containerContents {
+    background-color: rgb(11 97 71 / 5%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 2em 2em;
+    gap: 8em 0;
+    .headComment {
+        text-align: center;
+        font-size: FZ(16);
+        letter-spacing: 0.08em;
+        line-height: 2em;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 117rem;
+        h3 {
+            width: 100%;
+            color: #04936a;
+            font-size: FZ(42);
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid #748184;
+            padding-bottom: 0.2em;
+        }
+        .sidebarH3 {
+            width: 100%;
+            font-size: FZ(16);
+            margin-top: 0.8em;
+            letter-spacing: 0.12em;
+        }
+    }
+    .blockDetail01,
+    .blockDetail02,
+    .blockDetail03 {
+        .boxImage {
+            position: relative;
+            font-size: inherit;
+            gap: 0 3em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 5em;
+            img {
+                aspect-ratio: 1.3325;
+                object-fit: cover;
+            }
+        }
+    }
+    .blockDetail04 {
+        .boxDetails {
+            position: relative;
+            font-size: inherit;
+            margin-top: 5em;
+            display: flex;
+            gap: 0 3em;
+            img {
+                width: 35%;
+            }
+            .wrapContents {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 1.4em 0;
+                h4 {
+                    @include Serif;
+                    font-size: FZ(30);
+                    letter-spacing: 0.04em;
+                    line-height: 1.6em;
+                }
+                h5 {
+                    position: relative;
+                    color: #04936a;
+                    font-size: FZ(20);
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    padding-left: 1.4em;
+                    margin-top: 1em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        translate: 0 -50%;
+                        left: 0;
+                        width: 1em;
+                        height: 2px;
+                        background-color: #04936a;
+                    }
+                }
+                p {
+                    font-size: FZ(16);
+                    text-align: justify;
+                    letter-spacing: 0.08em;
+                    line-height: 2em;
+                }
+            }
+        }
+    }
+}

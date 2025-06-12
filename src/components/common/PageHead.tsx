@@ -5,15 +5,15 @@
  * Last updated: 2025-06-03
  * ======================================= */
 
-import styles from '@/styles/components/common/PageTitle.module.scss';
+import styles from '@/styles/components/common/PageHead.module.scss';
 import { StaticImageData } from 'next/image';
+import Link from 'next/link';
 type PageHeadProps = {
-  titleEn: string;
   title: string;
   backgroundImage?: StaticImageData;
 };
 
-const PageTitle = ({ title, titleEn, backgroundImage }: PageHeadProps) => {
+const PageHead = ({ title, backgroundImage }: PageHeadProps) => {
   return (
     <>
       <section
@@ -24,10 +24,17 @@ const PageTitle = ({ title, titleEn, backgroundImage }: PageHeadProps) => {
             : undefined,
         }}
       >
-        <span className={styles.h2Sidebar}>{titleEn}</span>
-        <h2>{title}</h2>
+        <div className={styles.boxContents}>
+          <h2>{title}</h2>
+          <div className={styles.sidebarH2}>
+            <Link href="/" className={styles.itemLink}>
+              home
+            </Link>
+            <span>{title}</span>
+          </div>
+        </div>
       </section>
     </>
   );
 };
-export default PageTitle;
+export default PageHead;

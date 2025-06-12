@@ -10,13 +10,13 @@
         color: #04936a;
         font-size: FZ(47);
         font-weight: 600;
-        writing-mode: vertical-rl; //縦書き
-        text-orientation: upright; //縦書き英数回転
-        font-feature-settings: initial; //左詰め解除
+        writing-mode: vertical-rl; // 縦書き
+        text-orientation: upright; // 縦書き英数回転
+        font-feature-settings: initial; // 左詰め解除
     }
     .titleEn {
         flex: 1;
-        color: rgba(116, 129, 132, 0.75);
+        color: rgb(116 129 132 / 75%);
         font-size: FZ(24);
         text-transform: uppercase;
         border-bottom: solid 2px #748184;

@@ -1,10 +1,11 @@
 @use "variable" as *;
 @use "svg" as *;
+
 /* =================================
 ** 最上部
 ------------------------------ */
 .containerHead {
-    background: url(/images/top-head.webp) no-repeat center center/cover;
+    background: url("/images/top-head.webp") no-repeat center center/cover;
     display: flex;
     justify-content: center;
     padding: 14em 2em 16em;
@@ -31,7 +32,7 @@
                 translate: -50%;
                 bottom: calc(100% + 0.5em);
                 width: 3.6em;
-                background: url(../assets/images/logo-mark.webp) no-repeat
+                background: url("../assets/images/logo-mark.webp") no-repeat
                     center center/contain;
                 aspect-ratio: 318/359;
             }
@@ -46,6 +47,7 @@
         }
     }
 }
+
 /* =================================
 ** スライド画像
 ------------------------------ */
@@ -66,6 +68,7 @@
         }
     }
 }
+
 /* =================================
 ** 久環の特徴
 ------------------------------ */
@@ -73,7 +76,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5em 2em 5em;
+    padding: 5em 2em;
     article {
         max-width: 117rem;
         .listFeature {
@@ -92,6 +95,8 @@
                     font-size: inherit;
                     width: 50%;
                     padding-right: var(--block-gap);
+                    aspect-ratio: 1.5;
+                    object-fit: cover;
                 }
                 .wrapDetail {
                     font-size: inherit;
