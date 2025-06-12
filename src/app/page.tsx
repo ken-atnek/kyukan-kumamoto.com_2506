@@ -38,7 +38,7 @@ const featureList = [
     description:
       '弊社は産業廃棄物中間処理場を保有。\nさまざまな品目の処理を行う設備が整えております。',
     linkTitle: '産業廃棄物について',
-    linkUrl: '#',
+    linkUrl: '/service2/',
   },
   {
     image: featureImage03,

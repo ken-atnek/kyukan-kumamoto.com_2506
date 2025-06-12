@@ -1,0 +1,220 @@
+@use "variable" as *;
+@use "svg" as *;
+
+.container01,
+.container02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6em 2em 2em;
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 117rem;
+        h3 {
+            width: 100%;
+            color: #04936a;
+            font-size: FZ(42);
+            letter-spacing: 0.08em;
+            border-bottom: 2px solid #748184;
+            padding-bottom: 0.2em;
+        }
+    }
+}
+/* =================================
+** 保有施設
+------------------------------ */
+.container01 {
+    background-color: rgb(11 97 71 / 5%);
+
+    .headTitle {
+        font-size: FZ(28);
+        @include Serif;
+        letter-spacing: 0.04em;
+        position: relative;
+        margin-bottom: 2em;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+            top: calc(100% + 1em);
+            width: 3em;
+            height: 3px;
+            background-color: #04936a;
+        }
+    }
+    .headComment {
+        text-align: center;
+        font-size: FZ(16);
+        letter-spacing: 0.08em;
+        line-height: 2em;
+    }
+    article {
+        margin-top: 8em;
+
+        .listFacilities {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 4em 0;
+            margin-top: 3em;
+            li {
+                position: relative;
+                display: flex;
+                font-size: inherit;
+                --block-gap: 1.2em;
+                margin-top: 2em;
+                .itemImage {
+                    font-size: inherit;
+                    width: 50%;
+                    padding-right: var(--block-gap);
+                    aspect-ratio: 1.5;
+                    object-fit: cover;
+                }
+                .wrapDetail {
+                    font-size: inherit;
+                    padding-left: var(--block-gap);
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                    gap: 2em 0;
+                    padding-top: 0.5em;
+                    h4 {
+                        font-size: FZ(28);
+                        @include Serif;
+                        letter-spacing: 0.04em;
+                    }
+                    p {
+                        font-size: FZ(16);
+                        line-height: 1.8em;
+                        letter-spacing: 0.08em;
+                        text-align: justify;
+                    }
+                }
+                &:nth-of-type(2n) {
+                    flex-direction: row-reverse;
+                    .itemImage {
+                        padding-right: unset;
+                        padding-left: var(--block-gap);
+                    }
+                    .wrapDetail {
+                        padding-left: unset;
+                        padding-right: var(--block-gap);
+                    }
+                }
+            }
+        }
+    }
+}
+/* =================================
+** 処理可能品
+------------------------------ */
+.container02 {
+    gap: 8em 0;
+    padding-bottom: 5em;
+    article {
+        dl {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 3em 0;
+            width: 100%;
+            margin-top: 2em;
+            div {
+                position: relative;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                gap: 1.4em 0;
+                dt {
+                    position: relative;
+                    color: #04936a;
+                    font-size: FZ(20);
+                    font-weight: 600;
+                    letter-spacing: 0.08em;
+                    padding-left: 1.4em;
+                    margin-top: 1em;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        translate: 0 -50%;
+                        left: 0;
+                        width: 1em;
+                        height: 2px;
+                        background-color: #04936a;
+                    }
+                }
+                dd {
+                    position: relative;
+                    font-size: inherit;
+                    ul {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        font-size: inherit;
+                        gap: 0.8em 0;
+                        padding-left: 1em;
+                        li {
+                            font-size: FZ(18);
+                            letter-spacing: 0.08em;
+                            position: relative;
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 1em;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                top: 0.4em;
+                                width: 8px;
+                                aspect-ratio: 1;
+                                border-radius: 50%;
+                                background-color: $base-black;
+                            }
+                            span {
+                                color: rgba(72, 145, 126, 0.7);
+                                font-size: 0.9em;
+                                margin-top: 0.5em;
+                                letter-spacing: 0.08em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        nav {
+            width: 100%;
+            display: flex;
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 1em 0;
+            margin-top: 3em;
+            a {
+                font-size: inherit;
+                span {
+                    position: relative;
+                    font-size: FZ(16);
+                    letter-spacing: 0.04em;
+                    &::before {
+                        content: "・";
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        translate: 0 -50%;
+                        left: calc(100% + 0.5em);
+                        width: 1em;
+                        @include svg-icon-pdf("3333333");
+                    }
+                }
+            }
+        }
+    }
+}

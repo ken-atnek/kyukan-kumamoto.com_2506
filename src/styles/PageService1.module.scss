@@ -103,4 +103,22 @@
             }
         }
     }
+    /* =================================
+** 解体実績
+------------------------------ */
+    .blockWorks {
+        margin-top: 5em;
+        .boxImage {
+            position: relative;
+            font-size: inherit;
+            gap: 3em;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            margin-top: 5em;
+            img {
+                aspect-ratio: 1.3325;
+                object-fit: cover;
+            }
+        }
+    }
 }

@@ -1,8 +1,8 @@
 /* =======================================
- * ページタイトル
+ * ページ上部タイトル
  * URL: src/components/common/PageTitle.tsx
- * Created: 2025-06-03
- * Last updated: 2025-06-03
+ * Created: 2025-06-12
+ * Last updated: 2025-06-12
  * ======================================= */
 
 import styles from '@/styles/components/common/PageHead.module.scss';

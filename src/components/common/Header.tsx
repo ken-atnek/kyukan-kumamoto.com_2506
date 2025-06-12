@@ -90,13 +90,21 @@ const Header = () => {
           <Link href="/" className={styles.itemLink} onClick={closeMenu}>
             TOP
           </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
+          <Link
+            href="/service1/"
+            className={styles.itemLink}
+            onClick={closeMenu}
+          >
             解体業
           </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
+          <Link href="/works/" className={styles.itemLink} onClick={closeMenu}>
             解体実績
           </Link>
-          <Link href="#" className={styles.itemLink} onClick={closeMenu}>
+          <Link
+            href="/service2/"
+            className={styles.itemLink}
+            onClick={closeMenu}
+          >
             産業廃棄物
           </Link>
           <Link href="#" className={styles.itemLink} onClick={closeMenu}>
