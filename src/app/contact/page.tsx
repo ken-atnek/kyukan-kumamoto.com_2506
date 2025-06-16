@@ -58,7 +58,7 @@ export default function PageContact() {
 
     try {
       const response = await fetch(
-        'https://demo-kyukan-kumamoto.tuna-pic.co.jp/backend/contact.php',
+        'https://kyukan-kumamoto.com/backend/contact.php',
         {
           method: 'POST',
           body: formData,
