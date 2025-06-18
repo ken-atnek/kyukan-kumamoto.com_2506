@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 	}
 
 	// 📩 **メールの設定**
-	$to = "ken.atnek@gmail.com";
-	// $to = "kyu-kan-eco-@mx3.et.tiki.ne.jp";
+	//$to = "ken.atnek@gmail.com";
+	$to = "kyu-kan-eco-@mx3.et.tiki.ne.jp";
 	$to_name = "株式会社久環";
 	$send_date = date("Y/n/j-H:i", time());
 
