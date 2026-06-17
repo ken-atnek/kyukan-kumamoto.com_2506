@@ -15,11 +15,25 @@ import featureImage03 from '@/assets/images/top/feature/feature03.webp';
 import ContainerSlide from '@/components/top/ContainerSlide';
 import PageTitle from '@/components/common/PageTitle';
 import Link from 'next/link';
+import { buildCanonicalUrl, defaultOgImage, isRealProduction } from '@/lib/site';
+
 export const generateMetadata = (): Metadata => {
   return {
     title: '熊本・水俣の解体工事なら株式会社久環｜プラント・特殊構造物も対応',
     description:
       '株式会社久環は一般建造物の解体だけにとどまらず、プラントや発電所などの特殊設備・建造物の解体に長けております。”次に繋げる解体”を意識し、解体だけでなくその後の土地造成等の施工体制も保持。どんな建造物もお客様のニーズに即した形で安全に対応いたします。また、産業廃棄物中間処理場を保有しており、産業処理まで一貫して対応いたします。',
+    alternates: {
+      canonical: buildCanonicalUrl('/'),
+    },
+    ...(isRealProduction && {
+      openGraph: {
+        title: '熊本・水俣の解体工事なら株式会社久環｜プラント・特殊構造物も対応',
+        description:
+          '株式会社久環は一般建造物の解体だけにとどまらず、プラントや発電所などの特殊設備・建造物の解体に長けております。”次に繋げる解体”を意識し、解体だけでなくその後の土地造成等の施工体制も保持。どんな建造物もお客様のニーズに即した形で安全に対応いたします。また、産業廃棄物中間処理場を保有しており、産業処理まで一貫して対応いたします。',
+        url: buildCanonicalUrl('/'),
+        images: [defaultOgImage],
+      },
+    }),
   };
 };
 

@@ -17,12 +17,16 @@ import List0302 from '@/assets/images/service1/list03-02.webp';
 import List04 from '@/assets/images/service1/list04.webp';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { buildCanonicalUrl } from '@/lib/site';
 
 export const generateMetadata = (): Metadata => {
   return {
     title: '解体工事サービス｜熊本・水俣の建物解体なら株式会社久環',
     description:
       '熊本・水俣エリアを中心に、建物解体・特殊構造物の撤去を安全かつ迅速に対応いたします。株式会社久環では、解体から廃棄物処理・土地造成まで一貫対応。工場やプラントの特殊解体にも豊富な実績があります。',
+    alternates: {
+      canonical: buildCanonicalUrl('/service1/'),
+    },
   };
 };
 

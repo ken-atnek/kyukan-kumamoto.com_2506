@@ -16,12 +16,16 @@ import List05 from '@/assets/images/works/list05.webp';
 import List06 from '@/assets/images/works/list06.webp';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { buildCanonicalUrl } from '@/lib/site';
 
 export const generateMetadata = (): Metadata => {
   return {
     title: '解体実績｜熊本・水俣の建物解体なら株式会社久環',
     description:
       '株式会社久環が熊本・水俣エリアで手がけた解体工事の実績をご紹介します。鉄骨造や木造住宅、プラント・特殊施設まで、多様な施工例を写真とともに掲載。安全性と迅速性を兼ね備えた解体技術をご確認ください。',
+    alternates: {
+      canonical: buildCanonicalUrl('/works/'),
+    },
   };
 };
 

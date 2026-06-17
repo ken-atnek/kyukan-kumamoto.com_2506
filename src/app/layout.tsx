@@ -12,6 +12,13 @@ import { Libre_Franklin } from 'next/font/google';
 
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
+import {
+  defaultOgImage,
+  isRealProduction,
+  metadataBase,
+  siteName,
+} from '@/lib/site';
+
 const notoSans = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -22,30 +29,31 @@ const libreFranklin = Libre_Franklin({
   weight: ['300', '400', '500', '600', '700'], // 必要なウェイトだけでOK
   display: 'swap',
 });
-// 実際の本番環境かどうかを判定
-const isRealProduction = process.env.NEXT_PUBLIC_IS_REAL_PROD === 'true';
-
-// 本番のみ metadataBase を設定
-const metadataBase = isRealProduction
-  ? new URL(
-      process.env.NEXT_PUBLIC_METADATA_BASE || 'https://kyukan-kumamoto.com/'
-    )
-  : undefined;
 
 export const metadata: Metadata = {
+  metadataBase,
+  title: {
+    default: '株式会社久環',
+    template: '%s',
+  },
+  description:
+    '熊本・水俣を中心に、解体工事から産業廃棄物の収集運搬・中間処理まで一貫して対応する株式会社久環の公式サイトです。',
   ...(isRealProduction && {
-    metadataBase,
     openGraph: {
-      url: metadataBase?.toString(),
       type: 'website',
+      siteName,
       images: [
         {
-          url: './images/ogp.jpg',
+          url: defaultOgImage,
           width: 1200,
           height: 630,
-          alt: '久環のOGP画像',
+          alt: '株式会社久環のOGP画像',
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      images: [defaultOgImage],
     },
   }),
   robots: isRealProduction ? 'index, follow' : 'noindex, nofollow',
@@ -72,10 +80,6 @@ export default function RootLayout({
       className={`${notoSans.className} ${libreFranklin.className}`}
     >
       <head>
-        <meta
-          name="robots"
-          content={isRealProduction ? 'index, follow' : 'noindex, nofollow'}
-        />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"

@@ -15,12 +15,17 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { StaticImageData } from 'next/image';
+import { buildCanonicalUrl } from '@/lib/site';
+
 export const generateMetadata = (): Metadata => {
   return {
     title:
       '産業廃棄物の中間処理・収集運搬｜熊本・水俣の建物解体なら株式会社久環',
     description:
       '株式会社久環は熊本・水俣エリアを中心に、産業廃棄物の収集運搬および中間処理に対応。自社の中間処理施設を保有し、多様な廃棄物に対応可能。安全かつ適正な処理体制で、企業の廃棄物管理を強力にサポートします。',
+    alternates: {
+      canonical: buildCanonicalUrl('/service2/'),
+    },
   };
 };
 type Facility = {
@@ -181,7 +186,7 @@ export default function Service2Page() {
               <span>産業廃棄物収集運搬許可証</span>
             </a>
             <a
-              href="/data/pdf/obj20250407094605939101.pdf"
+              href="/data/pdf/shobungyo-kyokasho_exp-2031-01-11.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -13,11 +13,16 @@ import PageTitle from '@/components/common/PageTitle';
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import { buildCanonicalUrl } from '@/lib/site';
+
 export const generateMetadata = (): Metadata => {
   return {
     title: '会社情報・保有機材｜熊本・水俣の建物解体なら株式会社久環',
     description:
       '株式会社久環の会社概要と保有機材・施設のご紹介ページです。迅速で確実な解体工事と産業廃棄物処理を実現するために、豊富な機材と中間処理場を保有。熊本・水俣を中心に、安全かつ適正な施工と処理体制で地域社会に貢献します。',
+    alternates: {
+      canonical: buildCanonicalUrl('/company/'),
+    },
   };
 };
 
